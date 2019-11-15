@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Simple Canvas Game</title>
+		<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+		<style>
+		body { margin: 0px; overflow: hidden; font-family: "Acme"; }
+		.arrow { position: absolute; background: none; width: 3em; height: 3em; }
+		#uArrow { top:0px; width: 100%; }
+		#dArrow { bottom:0px; width: 100%; }
+		#lArrow { left:0px; height: 100%; }
+		#rArrow { right:0px; height: 100%; }
+		#scoreBox { width:100vw;z-index:100;position:absolute;top:50%;transform:translateY(-50%);display:none;text-align: center;}
+
+		input[type=text] {border: none; border-bottom: 2px solid red; background: none;color: white;font-size: 1.5em; font-family: "Acme"; font-weight: bold;text-align: center;}
+		input[type="submit"] {border: 2px solid red; background: red; color: white; margin: 1em;}
+		label {font-size: 0.6em;text-transform: uppercase;}
+	</style>
+	</head>
+	<body>
+		<nav>
+			<div id="uArrow" class="arrow"></div>
+			<div id="dArrow" class="arrow"></div>
+			<div id="lArrow" class="arrow"></div>
+			<div id="rArrow" class="arrow"></div>
+		</nav>
+		<div id="gameBox">
+		<script src="js/game.js"></script>
+		</div>
+		<div id="scoreBox">
+			<h2>Your Score!</h2>
+			<p id="score_display"></p>
+			<form id="scoreForm">
+				<input type="hidden" id="score_form" name="score_form" value="">
+				<label for="handle">Your Handle</label><br>
+				<input type="text" id="handle" name="handle"><br>
+				<input type="submit">
+			</form>
+			<h2>Highest Score</h2>
+			<p id="highHandle"></p>
+			<p id="highScore"></p>
+			<script src="app/getScore.js"></script>
+			<script src="app/setScore.js"></script>
+		</div>
+	</body>
+</html>
