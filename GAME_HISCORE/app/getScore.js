@@ -24,10 +24,10 @@ var getScore = function () {
 			console.log(itemRaw); // log response
 
 			//We only take the firs item (address 0) in the results which contains the highest score
-			document.getElementById("highHandle").innerHTML = itemRaw[0].handle;
-			document.getElementById("highScore").innerHTML = itemRaw[0].score;
+			document.getElementById("highHandle").innerHTML = itemRaw[0].Handle;
+			document.getElementById("highScore").innerHTML = itemRaw[0].Score;
 
-			hScore = itemRaw[0].score;//variable from game
+			hScore = itemRaw[0].Score;//variable from game
 
 		}
 	};

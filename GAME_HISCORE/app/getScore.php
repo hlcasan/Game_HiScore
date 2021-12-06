@@ -3,7 +3,7 @@ require_once("db_connect.php");//establish DB connection
 
 if ($dbi) {
     // SQL query
-    $q = "SELECT handle, score FROM high_score ORDER BY score DESC";
+    $q = "SELECT Handle, Score FROM GameScore ORDER BY Score DESC";
 
     // Array of return from SQL query to translate to json
     $rArray = array();
@@ -18,8 +18,8 @@ if ($dbi) {
         //Collect the results
         while($stmt->fetch()) {
             $rArray[] = [
-                "handle"=>$rH,
-                "score"=>$rS
+                "Handle"=>$rH,
+                "Score"=>$rS
             ];
         }
         

@@ -12,9 +12,11 @@
 		#dArrow { bottom:0px; width: 100%; }
 		#lArrow { left:0px; height: 100%; }
 		#rArrow { right:0px; height: 100%; }
-		#scoreBox { width:100vw;z-index:100;position:absolute;top:50%;transform:translateY(-50%);display:none;text-align: center;}
 
-		input[type=text] {border: none; border-bottom: 2px solid red; background: none;color: white;font-size: 1.5em; font-family: "Acme"; font-weight: bold;text-align: center;}
+		#scoreBox { display:none;width:100vw;z-index:100;position:absolute;top:50%;transform:translateY(-50%);text-align:center;}
+		#score_display { font-size:4em;font-weight:bold;color:white;margin:0.3em;}
+
+		input[type=text] {border: 2px solid red;border-top: none;  background: none;color: white;font-size: 1.5em; font-family: "Acme"; font-weight: bold;text-align: center;}
 		input[type="submit"] {border: 2px solid red; background: red; color: white; margin: 1em;}
 		label {font-size: 0.6em;text-transform: uppercase;}
 	</style>
@@ -33,14 +35,14 @@
 			<h2>Your Score!</h2>
 			<p id="score_display"></p>
 			<form id="scoreForm">
-				<input type="hidden" id="score_form" name="score_form" value="">
-				<label for="handle">Your Handle</label><br>
-				<input type="text" id="handle" name="handle"><br>
+				<input type="hidden" id="ScoreInput" name="ScoreInput" value="">
+				<label for="Handle">Your Handle</label><br>
+				<input type="text" id="Handle" name="Handle"><br>
 				<input type="submit">
 			</form>
 			<h2>Highest Score</h2>
-			<p id="highHandle"></p>
-			<p id="highScore"></p>
+			<p><span id="highHandle"></span> — <span id="highScore"></span></p>
+
 			<script src="app/getScore.js"></script>
 			<script src="app/setScore.js"></script>
 		</div>

@@ -9,13 +9,13 @@ error_reporting(E_ALL);
 
 if ($dbi) {
     //Collect the user’s data
-    $handle = $_REQUEST['handle'];
-    $score = $_REQUEST['score_form'];
+    $Handle = $_REQUEST['Handle'];
+    $Score = $_REQUEST['ScoreInput'];
 
-    if ($score != "") { //proceed only if a category was provided, otherwise ignore
+    if ($Handle != "") { //proceed only if a User was provided, otherwise ignore
 
         //prepare the SQL query
-        $q = "INSERT INTO high_score (handle, score) VALUES (?,?)";
+        $q = "INSERT INTO GameScore (Handle, Score) VALUES (?,?)";
     
         //This should contain 1 when the line is inserted (check line 41)
         $insertedRows = 0;
@@ -24,7 +24,7 @@ if ($dbi) {
         if ($insertStmt = $dbi->prepare($q)) {
             //update bind parameter types & variables as required
             //s=string, i=integer, d=double, b=blob
-            $insertStmt->bind_param("si", $handle, $score);
+            $insertStmt->bind_param("si", $Handle, $Score);
             $insertStmt->execute();//run the SQL
             $insertedRows += $insertStmt->affected_rows;
         } else {

@@ -57,7 +57,7 @@ var time;  //time
 var timer; //timer
 var time_over; //end of game condition
 
-var hScore; //container for highest score
+var hScore; //container for highest score from DB
 
 // Handle keyboard controls
 addEventListener("keydown", function (e) {
@@ -178,7 +178,7 @@ var render_end = function () {
 	//Display the score and prepare the form
 	document.getElementById("scoreBox").style.display = "block";
 	document.getElementById("score_display").innerHTML = pts; //visible score
-	document.getElementById("score_form").value = pts; //form score
+	document.getElementById("ScoreInput").value = pts; //form input score
 };
 
 //Generic function to check for collisions 
